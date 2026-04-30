@@ -1,3 +1,4 @@
+using Store.Forms;
 namespace Store
 {
     internal static class Program

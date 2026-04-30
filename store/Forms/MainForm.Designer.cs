@@ -1,4 +1,4 @@
-﻿namespace Store
+﻿namespace Store.Forms
 {
     partial class MainForm
     {
@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Text = "Form1";
+            Text = "MainForm";
         }
 
         #endregion

@@ -1,4 +1,4 @@
-namespace Store
+namespace Store.Forms
 {
     public partial class MainForm : Form
     {
