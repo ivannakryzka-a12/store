@@ -10,23 +10,36 @@ namespace Store.Services
     /// <summary> Керує списком товарів у магазині. </summary>
     public class StoreManager
     {
-        /// <summary> Список усіх товарів у магазині. </summary>
         public List<Product> Products { get; set; } = new();
 
-        /// <summary> Додає новий товар у список. </summary>
         public void AddProduct(Product item)
         {
-            if (item == null) return;
+            if (item == null) 
+                return;
+
             Products.Add(item);
         }
 
-        /// <summary> Видаляє товар зі списку. </summary>
+        public void AddOrUpdateProduct(Product newProduct)
+        {
+            var existing = GetByName(newProduct.Name);
+
+            if (existing != null)
+            {
+                existing.Quantity += newProduct.Quantity;
+                existing.LastDeliveryDate = DateTime.Now;
+            }
+            else
+            {
+                Products.Add(newProduct);
+            }
+        }
+
         public bool DeleteProduct(Product item)
         {
             return Products.Remove(item);
         }
 
-        /// <summary> Повертає товар за назвою (без урахування регістру). </summary>
         public Product? GetByName(string name)
         {
             return Products.FirstOrDefault(p =>
@@ -46,11 +59,11 @@ namespace Store.Services
             return total;
         }
 
-        /// <summary> Перевіряє, чи достатньо товару для операції. </summary>
         public bool HasEnough(Product product, int count)
         {
             return product.Quantity >= count;
         }
+
         /// <summary>
         /// Уцінка товару.
         /// </summary>
@@ -62,6 +75,7 @@ namespace Store.Services
             product.Price = newPrice;
             return true;
         }
+
         /// <summary>
         /// Списання товару (зменшення кількості не через продаж).
         /// </summary>
