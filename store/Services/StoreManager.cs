@@ -49,5 +49,30 @@ namespace Store.Services
         {
             return product.Quantity >= count;
         }
+        /// <summary>
+        /// Уцінка товару.
+        /// </summary>
+        public bool UpdatePrice(Product product, decimal newPrice)
+        {
+            if (product == null || newPrice <= 0)
+                return false;
+
+            product.Price = newPrice;
+            return true;
+        }
+        /// <summary>
+        /// Списання товару (зменшення кількості не через продаж).
+        /// </summary>
+        public bool WriteOff(Product product, int quantity)
+        {
+            if (product == null || quantity <= 0)
+                return false;
+
+            if (product.Quantity < quantity)
+                return false;
+
+            product.Quantity -= quantity;
+            return true;
+        }
     }
 }
