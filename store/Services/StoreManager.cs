@@ -16,6 +16,7 @@ namespace Store.Services
         /// <summary> Додає новий товар у список. </summary>
         public void AddProduct(Product item)
         {
+            if (item == null) return;
             Products.Add(item);
         }
 
