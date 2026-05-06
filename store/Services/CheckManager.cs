@@ -12,11 +12,17 @@ namespace Store.Services
     {
         private readonly StoreManager _storeManager;
 
+        /// <summary>
+        /// Створює екземпляр CheckManager з доступом до магазину.
+        /// </summary>
         public CheckManager(StoreManager storeManager)
         {
             _storeManager = storeManager;
         }
 
+        /// <summary>
+        /// Створює новий чек.
+        /// </summary>
         public Check CreateCheck()
         {
             return new Check();
@@ -50,6 +56,9 @@ namespace Store.Services
             return true;
         }
 
+        /// <summary>
+        /// Повертає загальну суму чека.
+        /// </summary>
         public decimal GetCheckTotal(Check check)
         {
             return check.TotalAmount();

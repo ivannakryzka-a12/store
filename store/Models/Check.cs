@@ -9,10 +9,19 @@ namespace Store.Models
     /// </summary>
     public class Check
     {
+        /// <summary>
+        /// Дата створення чека.
+        /// </summary>
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        /// <summary>
+        /// Список товарів у чеку.
+        /// </summary>
         public List<CheckItem> Items { get; set; } = new();
 
-        /// <summary> Обчислює загальну суму чеку. </summary>
+        /// <summary>
+        /// Обчислює загальну суму чеку. 
+        /// </summary>
         public decimal TotalAmount()
         {
             decimal result = 0;
