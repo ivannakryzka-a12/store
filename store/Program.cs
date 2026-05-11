@@ -1,4 +1,6 @@
 using Store.Forms;
+using System.Globalization; 
+using System.Threading;
 namespace Store
 {
     internal static class Program
@@ -11,8 +13,11 @@ namespace Store
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            var culture = new System.Globalization.CultureInfo("uk-UA");
+            System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new DeliveryForm());
         }
     }
 }
