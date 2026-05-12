@@ -38,7 +38,7 @@
             deliveryDatePicker = new DateTimePicker();
             addDeliveryButton = new Button();
             label5 = new Label();
-            label6 = new Label();
+            lastDeliveryLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -101,19 +101,19 @@
             label5.ForeColor = Color.FromArgb(70, 40, 40);
             label5.Name = "label5";
             // 
-            // label6
+            // lastDeliveryLabel
             // 
-            resources.ApplyResources(label6, "label6");
-            label6.ForeColor = Color.FromArgb(70, 40, 40);
-            label6.Name = "label6";
-            label6.Click += label6_Click;
+            resources.ApplyResources(lastDeliveryLabel, "lastDeliveryLabel");
+            lastDeliveryLabel.ForeColor = Color.FromArgb(70, 40, 40);
+            lastDeliveryLabel.Name = "lastDeliveryLabel";
+            lastDeliveryLabel.Click += label6_Click;
             // 
             // DeliveryForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 240, 235);
-            Controls.Add(label6);
+            Controls.Add(lastDeliveryLabel);
             Controls.Add(label5);
             Controls.Add(addDeliveryButton);
             Controls.Add(deliveryDatePicker);
@@ -141,6 +141,6 @@
         private DateTimePicker deliveryDatePicker;
         private Button addDeliveryButton;
         private Label label5;
-        private Label label6;
+        private Label lastDeliveryLabel;
     }
 }

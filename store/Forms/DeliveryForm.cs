@@ -58,8 +58,7 @@ namespace Store.Forms
 
             string productName = productNameTextBox.Text;
 
-            Product product =
-                _storeManager.GetByName(productName);
+            Product product = _storeManager.GetByName(productName);
 
             if (product == null)
             {
@@ -69,10 +68,11 @@ namespace Store.Forms
 
             product.Quantity += quantity;
 
-            product.LastDeliveryDate =
-                deliveryDatePicker.Value;
+            product.LastDeliveryDate = deliveryDatePicker.Value;
 
             DataStorage.Save(_storeManager.Products, FilePath);
+
+            lastDeliveryLabel.Text = $"{product.Name} | {quantity} {product.Unit} | {product.LastDeliveryDate:dd.MM.yyyy}";
 
             MessageBox.Show("Надходження додано");
 
