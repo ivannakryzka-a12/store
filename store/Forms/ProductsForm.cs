@@ -26,7 +26,17 @@ namespace Store.Forms
 
             _bindingSource.DataSource = typeof(List<Product>);
             _bindingSource.DataSource = _storeManager.Products;
+        }
 
+        private void UpdateGrid()
+        {
+            _bindingSource.DataSource = null;
+            _bindingSource.DataSource = _storeManager.Products;
+            RenameColumns();
+        }
+
+        private void RenameColumns()
+        {
             if (productsGrid.Columns["Name"] != null) productsGrid.Columns["Name"].HeaderText = "Назва";
             if (productsGrid.Columns["Unit"] != null) productsGrid.Columns["Unit"].HeaderText = "Одиниця";
             if (productsGrid.Columns["Price"] != null) productsGrid.Columns["Price"].HeaderText = "Ціна";
@@ -34,13 +44,6 @@ namespace Store.Forms
             if (productsGrid.Columns["LastDeliveryDate"] != null) productsGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
         }
 
-        private void UpdateGrid()
-        {
-            _bindingSource.DataSource = null;
-            _bindingSource.DataSource = _storeManager.Products;
-            _bindingSource.ResetBindings(false);
-        }
-     
 
         private void label3_Click(object sender, EventArgs e)
         {

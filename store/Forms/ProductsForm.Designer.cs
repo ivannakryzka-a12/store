@@ -60,6 +60,7 @@
             // productsGrid
             // 
             productsGrid.AllowUserToAddRows = false;
+            productsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsGrid.BackgroundColor = Color.White;
             productsGrid.BorderStyle = BorderStyle.None;
             productsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
