@@ -21,7 +21,7 @@ namespace Store.Forms
 
         private const string FilePath = "products.json";
 
-        private BindingSource _bindingSource = new BindingSource(); 
+        private BindingSource _bindingSource = new BindingSource();
         public SaleForm()
         {
             InitializeComponent();
@@ -80,6 +80,45 @@ namespace Store.Forms
         private void finishSaleButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addToCheckButton_Click(object sender, EventArgs e)
+        {
+            if (productsGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Виберіть товар");
+                return;
+            }
+
+            int quantity;
+
+            bool correct = int.TryParse(quantityTextBox.Text, out quantity);
+
+            if (!correct || quantity <= 0)
+            {
+                MessageBox.Show("Некоректна кількість");
+                return;
+            }
+
+            Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            bool success = _checkManager.AddProductToCheck(_currentCheck, selectedProduct.Name, quantity);
+
+            if (!success)
+            {
+                MessageBox.Show("Недостатньо товару");
+                return;
+            }
+
+            checkListBox.Items.Add($"{selectedProduct.Name} | " + $"{quantity} x {selectedProduct.Price} грн");
+
+            label4.Text = $"Сума: {_checkManager.GetCheckTotal(_currentCheck)} грн";
+
+            DataStorage.Save(_storeManager.Products, FilePath);
+
+            UpdateGrid();
+
+            quantityTextBox.Clear();
         }
     }
 }

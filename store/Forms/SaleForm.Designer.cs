@@ -109,6 +109,7 @@
             addToCheckButton.TabIndex = 6;
             addToCheckButton.Text = "Додати в чек";
             addToCheckButton.UseVisualStyleBackColor = false;
+            addToCheckButton.Click += addToCheckButton_Click;
             // 
             // label4
             // 
