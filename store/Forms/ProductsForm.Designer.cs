@@ -38,11 +38,11 @@
             unitTextBox = new TextBox();
             priceTextBox = new TextBox();
             quantityTextBox = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            addButton = new Button();
+            updateButton = new Button();
+            deleteButton = new Button();
+            discountButton = new Button();
+            writeOffButton = new Button();
             ((System.ComponentModel.ISupportInitialize)productsGrid).BeginInit();
             SuspendLayout();
             // 
@@ -150,71 +150,72 @@
             quantityTextBox.Size = new Size(180, 30);
             quantityTextBox.TabIndex = 9;
             // 
-            // button1
+            // addButton
             // 
-            button1.BackColor = Color.FromArgb(120, 0, 0);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(158, 444);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 40);
-            button1.TabIndex = 10;
-            button1.Text = "Додати";
-            button1.UseVisualStyleBackColor = false;
+            addButton.BackColor = Color.FromArgb(120, 0, 0);
+            addButton.FlatStyle = FlatStyle.Flat;
+            addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            addButton.ForeColor = Color.White;
+            addButton.Location = new Point(158, 444);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(140, 40);
+            addButton.TabIndex = 10;
+            addButton.Text = "Додати";
+            addButton.UseVisualStyleBackColor = false;
+            addButton.Click += addButton_Click;
             // 
-            // button2
+            // updateButton
             // 
-            button2.BackColor = Color.FromArgb(120, 0, 0);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(330, 444);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 40);
-            button2.TabIndex = 11;
-            button2.Text = "Оновити";
-            button2.UseVisualStyleBackColor = false;
+            updateButton.BackColor = Color.FromArgb(120, 0, 0);
+            updateButton.FlatStyle = FlatStyle.Flat;
+            updateButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            updateButton.ForeColor = Color.White;
+            updateButton.Location = new Point(330, 444);
+            updateButton.Name = "updateButton";
+            updateButton.Size = new Size(140, 40);
+            updateButton.TabIndex = 11;
+            updateButton.Text = "Оновити";
+            updateButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // deleteButton
             // 
-            button3.BackColor = Color.FromArgb(120, 0, 0);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(510, 444);
-            button3.Name = "button3";
-            button3.Size = new Size(140, 40);
-            button3.TabIndex = 12;
-            button3.Text = "Видалити";
-            button3.UseVisualStyleBackColor = false;
+            deleteButton.BackColor = Color.FromArgb(120, 0, 0);
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            deleteButton.ForeColor = Color.White;
+            deleteButton.Location = new Point(510, 444);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(140, 40);
+            deleteButton.TabIndex = 12;
+            deleteButton.Text = "Видалити";
+            deleteButton.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // discountButton
             // 
-            button4.BackColor = Color.FromArgb(120, 0, 0);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(240, 501);
-            button4.Name = "button4";
-            button4.RightToLeft = RightToLeft.No;
-            button4.Size = new Size(140, 40);
-            button4.TabIndex = 13;
-            button4.Text = "Уцінка";
-            button4.UseVisualStyleBackColor = false;
+            discountButton.BackColor = Color.FromArgb(120, 0, 0);
+            discountButton.FlatStyle = FlatStyle.Flat;
+            discountButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            discountButton.ForeColor = Color.White;
+            discountButton.Location = new Point(240, 501);
+            discountButton.Name = "discountButton";
+            discountButton.RightToLeft = RightToLeft.No;
+            discountButton.Size = new Size(140, 40);
+            discountButton.TabIndex = 13;
+            discountButton.Text = "Уцінка";
+            discountButton.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // writeOffButton
             // 
-            button5.BackColor = Color.FromArgb(120, 0, 0);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(433, 501);
-            button5.Name = "button5";
-            button5.Size = new Size(140, 40);
-            button5.TabIndex = 14;
-            button5.Text = "Списати";
-            button5.UseVisualStyleBackColor = false;
+            writeOffButton.BackColor = Color.FromArgb(120, 0, 0);
+            writeOffButton.FlatStyle = FlatStyle.Flat;
+            writeOffButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            writeOffButton.ForeColor = Color.White;
+            writeOffButton.Location = new Point(433, 501);
+            writeOffButton.Name = "writeOffButton";
+            writeOffButton.Size = new Size(140, 40);
+            writeOffButton.TabIndex = 14;
+            writeOffButton.Text = "Списати";
+            writeOffButton.UseVisualStyleBackColor = false;
             // 
             // ProductsForm
             // 
@@ -222,11 +223,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 240, 235);
             ClientSize = new Size(882, 553);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(writeOffButton);
+            Controls.Add(discountButton);
+            Controls.Add(deleteButton);
+            Controls.Add(updateButton);
+            Controls.Add(addButton);
             Controls.Add(quantityTextBox);
             Controls.Add(priceTextBox);
             Controls.Add(unitTextBox);
@@ -259,10 +260,10 @@
         private TextBox unitTextBox;
         private TextBox priceTextBox;
         private TextBox quantityTextBox;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button addButton;
+        private Button updateButton;
+        private Button deleteButton;
+        private Button discountButton;
+        private Button writeOffButton;
     }
 }
