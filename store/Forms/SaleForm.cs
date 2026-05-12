@@ -11,6 +11,9 @@ using Store.Services;
 
 namespace Store.Forms
 {
+    /// <summary>
+    /// Форма для оформлення продажу товарів та формування чека.
+    /// </summary>
     public partial class SaleForm : Form
     {
         private StoreManager _storeManager = new();
@@ -22,6 +25,10 @@ namespace Store.Forms
         private const string FilePath = "products.json";
 
         private BindingSource _bindingSource = new BindingSource();
+
+        /// <summary>
+        /// Конструктор форми: ініціалізує менеджери, завантажує товари та налаштовує таблицю.
+        /// </summary>
         public SaleForm()
         {
             InitializeComponent();
@@ -79,7 +86,23 @@ namespace Store.Forms
 
         private void finishSaleButton_Click(object sender, EventArgs e)
         {
+            if (_currentCheck.Items.Count == 0)
+            {
+                MessageBox.Show("Чек порожній");
+                return;
+            }
 
+            decimal total = _checkManager.GetCheckTotal(_currentCheck);
+
+            MessageBox.Show($"Покупку завершено\nСума: {total} грн");
+
+            _currentCheck = _checkManager.CreateCheck();
+
+            checkListBox.Items.Clear();
+
+            label4.Text = "Сума: 0 грн";
+
+            UpdateGrid();
         }
 
         private void addToCheckButton_Click(object sender, EventArgs e)
