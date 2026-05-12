@@ -189,6 +189,7 @@
             deleteButton.TabIndex = 12;
             deleteButton.Text = "Видалити";
             deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // discountButton
             // 

@@ -73,5 +73,21 @@ namespace Store.Forms
             priceTextBox.Clear();
             quantityTextBox.Clear();
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (productsGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Виберіть товар");
+                return;
+            }
+
+            Product selectedProduct =
+                (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            _storeManager.DeleteProduct(selectedProduct);
+
+            UpdateGrid();
+        }
     }
 }
