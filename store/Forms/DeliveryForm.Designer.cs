@@ -93,6 +93,7 @@
             addDeliveryButton.ForeColor = Color.White;
             addDeliveryButton.Name = "addDeliveryButton";
             addDeliveryButton.UseVisualStyleBackColor = false;
+            addDeliveryButton.Click += addDeliveryButton_Click;
             // 
             // label5
             // 
