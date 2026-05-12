@@ -13,23 +13,34 @@ namespace Store.Forms
     public partial class ProductsForm : Form
     {
         private StoreManager _storeManager = new();
-
-        private void UpdateGrid()
-        {
-            productsGrid.DataSource = null;
-            productsGrid.DataSource = _storeManager.Products;
-
-            productsGrid.Columns["Name"].HeaderText = "Назва";
-            productsGrid.Columns["Unit"].HeaderText = "Одиниця";
-            productsGrid.Columns["Price"].HeaderText = "Ціна";
-            productsGrid.Columns["Quantity"].HeaderText = "Кількість";
-            productsGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
-        }
+        private BindingSource _bindingSource = new BindingSource();
         public ProductsForm()
         {
             InitializeComponent();
+            SetupGrid(); 
             UpdateGrid();
         }
+        private void SetupGrid()
+        {
+            productsGrid.DataSource = _bindingSource;
+
+            _bindingSource.DataSource = typeof(List<Product>);
+            _bindingSource.DataSource = _storeManager.Products;
+
+            if (productsGrid.Columns["Name"] != null) productsGrid.Columns["Name"].HeaderText = "Назва";
+            if (productsGrid.Columns["Unit"] != null) productsGrid.Columns["Unit"].HeaderText = "Одиниця";
+            if (productsGrid.Columns["Price"] != null) productsGrid.Columns["Price"].HeaderText = "Ціна";
+            if (productsGrid.Columns["Quantity"] != null) productsGrid.Columns["Quantity"].HeaderText = "Кількість";
+            if (productsGrid.Columns["LastDeliveryDate"] != null) productsGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
+        }
+
+        private void UpdateGrid()
+        {
+            _bindingSource.DataSource = null;
+            _bindingSource.DataSource = _storeManager.Products;
+            _bindingSource.ResetBindings(false);
+        }
+     
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -76,18 +87,40 @@ namespace Store.Forms
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (productsGrid.CurrentRow == null)
+            if (productsGrid.CurrentRow == null || productsGrid.CurrentRow.Index < 0)
             {
-                MessageBox.Show("Виберіть товар");
+                MessageBox.Show("Виберіть товар у таблиці (натисніть на рядок)");
                 return;
             }
 
-            Product selectedProduct =
-                (Product)productsGrid.CurrentRow.DataBoundItem;
+            Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
 
-            _storeManager.DeleteProduct(selectedProduct);
+            if (selectedProduct != null)
+            {
+                _storeManager.DeleteProduct(selectedProduct);
+                UpdateGrid();
 
-            UpdateGrid();
+                nameTextBox.Clear();
+                unitTextBox.Clear();
+                priceTextBox.Clear();
+                quantityTextBox.Clear();
+            }
+        }
+
+        private void productsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = productsGrid.Rows[e.RowIndex];
+            Product selectedProduct = (Product)row.DataBoundItem;
+
+            if (selectedProduct != null)
+            {
+                nameTextBox.Text = selectedProduct.Name;
+                unitTextBox.Text = selectedProduct.Unit;
+                priceTextBox.Text = selectedProduct.Price.ToString();
+                quantityTextBox.Text = selectedProduct.Quantity.ToString();
+            }
         }
     }
 }

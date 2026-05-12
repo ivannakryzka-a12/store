@@ -59,12 +59,15 @@
             // 
             // productsGrid
             // 
+            productsGrid.AllowUserToAddRows = false;
             productsGrid.BackgroundColor = Color.White;
             productsGrid.BorderStyle = BorderStyle.None;
             productsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsGrid.Location = new Point(30, 70);
+            productsGrid.MultiSelect = false;
             productsGrid.Name = "productsGrid";
             productsGrid.RowHeadersWidth = 51;
+            productsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productsGrid.Size = new Size(820, 220);
             productsGrid.TabIndex = 1;
             // 
