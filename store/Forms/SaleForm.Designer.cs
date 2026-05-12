@@ -53,19 +53,22 @@
             // 
             // productsGrid
             // 
+            productsGrid.AllowUserToAddRows = false;
+            productsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsGrid.BackgroundColor = Color.White;
             productsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsGrid.Location = new Point(30, 80);
             productsGrid.Name = "productsGrid";
+            productsGrid.RowHeadersVisible = false;
             productsGrid.RowHeadersWidth = 51;
-            productsGrid.Size = new Size(400, 250);
+            productsGrid.Size = new Size(519, 250);
             productsGrid.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(646, 49);
+            label2.Location = new Point(691, 49);
             label2.Name = "label2";
             label2.Size = new Size(49, 28);
             label2.TabIndex = 2;
@@ -74,7 +77,7 @@
             // checkListBox
             // 
             checkListBox.FormattingEnabled = true;
-            checkListBox.Location = new Point(520, 80);
+            checkListBox.Location = new Point(570, 80);
             checkListBox.Name = "checkListBox";
             checkListBox.Size = new Size(300, 244);
             checkListBox.TabIndex = 3;
