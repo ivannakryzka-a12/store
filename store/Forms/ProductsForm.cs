@@ -13,10 +13,14 @@ namespace Store.Forms
     public partial class ProductsForm : Form
     {
         private StoreManager _storeManager = new();
+        private const string FilePath = "products.json";
         private BindingSource _bindingSource = new BindingSource();
         public ProductsForm()
         {
             InitializeComponent();
+
+            _storeManager.Products = DataStorage.Load(FilePath);
+
             SetupGrid();
             UpdateGrid();
         }
@@ -44,17 +48,6 @@ namespace Store.Forms
             if (productsGrid.Columns["LastDeliveryDate"] != null) productsGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
         }
 
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addButton_Click(object sender, EventArgs e)
         {
             decimal price;
@@ -80,6 +73,8 @@ namespace Store.Forms
 
             _storeManager.AddOrUpdateProduct(product);
 
+            DataStorage.Save(_storeManager.Products, FilePath);
+
             UpdateGrid();
 
             nameTextBox.Clear();
@@ -101,6 +96,9 @@ namespace Store.Forms
             if (selectedProduct != null)
             {
                 _storeManager.DeleteProduct(selectedProduct);
+
+                DataStorage.Save(_storeManager.Products, FilePath);
+
                 UpdateGrid();
 
                 nameTextBox.Clear();
@@ -154,6 +152,8 @@ namespace Store.Forms
             selectedProduct.Price = price;
             selectedProduct.Quantity = quantity;
 
+            DataStorage.Save(_storeManager.Products, FilePath);
+
             UpdateGrid();
         }
 
@@ -178,6 +178,8 @@ namespace Store.Forms
             }
 
             _storeManager.UpdatePrice(selectedProduct, newPrice);
+
+            DataStorage.Save(_storeManager.Products, FilePath);
 
             UpdateGrid();
         }
@@ -209,6 +211,8 @@ namespace Store.Forms
                 MessageBox.Show("Недостатньо товару");
                 return;
             }
+
+            DataStorage.Save(_storeManager.Products, FilePath);
 
             UpdateGrid();
         }

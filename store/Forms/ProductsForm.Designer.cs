@@ -101,7 +101,6 @@
             label3.Size = new Size(92, 23);
             label3.TabIndex = 4;
             label3.Text = "Одиниця:";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -122,7 +121,6 @@
             label5.Size = new Size(92, 23);
             label5.TabIndex = 6;
             label5.Text = "Кількість:";
-            label5.Click += label5_Click;
             // 
             // unitTextBox
             // 
