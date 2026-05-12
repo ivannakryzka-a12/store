@@ -139,11 +139,9 @@ namespace Store.Forms
             decimal price;
             int quantity;
 
-            bool priceCorrect =
-                decimal.TryParse(priceTextBox.Text, out price);
+            bool priceCorrect = decimal.TryParse(priceTextBox.Text, out price);
 
-            bool quantityCorrect =
-                int.TryParse(quantityTextBox.Text, out quantity);
+            bool quantityCorrect = int.TryParse(quantityTextBox.Text, out quantity);
 
             if (!priceCorrect || !quantityCorrect)
             {
@@ -155,6 +153,31 @@ namespace Store.Forms
             selectedProduct.Unit = unitTextBox.Text;
             selectedProduct.Price = price;
             selectedProduct.Quantity = quantity;
+
+            UpdateGrid();
+        }
+
+        private void discountButton_Click(object sender, EventArgs e)
+        {
+            if (productsGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Виберіть товар");
+                return;
+            }
+
+            Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            decimal newPrice;
+
+            bool correct = decimal.TryParse(priceTextBox.Text, out newPrice);
+
+            if (!correct || newPrice <= 0)
+            {
+                MessageBox.Show("Некоректна ціна");
+                return;
+            }
+
+            _storeManager.UpdatePrice(selectedProduct, newPrice);
 
             UpdateGrid();
         }

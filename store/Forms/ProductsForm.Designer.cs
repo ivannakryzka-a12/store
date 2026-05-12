@@ -209,6 +209,7 @@
             discountButton.TabIndex = 13;
             discountButton.Text = "Уцінка";
             discountButton.UseVisualStyleBackColor = false;
+            discountButton.Click += discountButton_Click;
             // 
             // writeOffButton
             // 
