@@ -10,11 +10,18 @@ using Store.Services;
 
 namespace Store.Forms
 {
+    /// <summary>
+    /// Головна форма для керування списком товарів (склад).
+    /// </summary>
     public partial class ProductsForm : Form
     {
         private StoreManager _storeManager = new();
         private const string FilePath = "products.json";
         private BindingSource _bindingSource = new BindingSource();
+
+        /// <summary>
+        /// Конструктор форми: завантажує дані та налаштовує таблицю
+        /// </summary>
         public ProductsForm()
         {
             InitializeComponent();

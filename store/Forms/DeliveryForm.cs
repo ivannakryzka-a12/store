@@ -12,11 +12,17 @@ using Store.Services;
 
 namespace Store.Forms
 {
+    /// <summary>
+    /// лас для управління надходженням товарів на склад.
+    /// </summary>
     public partial class DeliveryForm : Form
     {
         private StoreManager _storeManager = new();
         private const string FilePath = "products.json";
 
+        /// <summary>
+        /// Конструктор форми: налаштовує компоненти та завантажує дані з файлу.
+        /// </summary>
         public DeliveryForm()
         {
             InitializeComponent();

@@ -1,7 +1,13 @@
 namespace Store.Forms
 {
+    /// <summary>
+    /// Головна форма - меню для переходу між іншими формами.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Конструктор головної форми.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
