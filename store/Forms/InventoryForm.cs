@@ -63,5 +63,33 @@ namespace Store.Forms
             if (inventoryGrid.Columns["LastDeliveryDate"] != null)
                 inventoryGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            LoadData();
+
+            MessageBox.Show("Дані оновлено!");
+        }
+
+        private void saveReportButton_Click(object sender, EventArgs e)
+        {
+            string report = "ЗВІТ ПРО ІНВЕНТАРИЗАЦІЮ\n\n";
+
+            foreach (Product product in _storeManager.Products)
+            {
+                report +=
+                    $"{product.Name} | " +
+                    $"{product.Quantity} {product.Unit} | " +
+                    $"{product.Price} грн\n";
+            }
+
+            report +=
+                $"\nЗагальна вартість: " +
+                $"{_storeManager.CalculateTotalStockPrice()} грн";
+
+            File.WriteAllText("inventory_report.txt", report);
+
+            MessageBox.Show("Звіт збережено");
+        }
     }
 }

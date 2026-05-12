@@ -92,6 +92,7 @@
             refreshButton.TabIndex = 4;
             refreshButton.Text = "Оновити дані";
             refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // saveReportButton
             // 
@@ -105,6 +106,7 @@
             saveReportButton.TabIndex = 5;
             saveReportButton.Text = "Зберегти звіт";
             saveReportButton.UseVisualStyleBackColor = false;
+            saveReportButton.Click += saveReportButton_Click;
             // 
             // InventoryForm
             // 
