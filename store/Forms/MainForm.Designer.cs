@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            productsButton = new Button();
+            deliveryButton = new Button();
+            saleButton = new Button();
+            inventoryButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -46,57 +46,61 @@
             label1.TabIndex = 0;
             label1.Text = "Облік товарів";
             // 
-            // button1
+            // productsButton
             // 
-            button1.BackColor = Color.FromArgb(120, 0, 0);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(230, 130);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 45);
-            button1.TabIndex = 1;
-            button1.Text = "Товари";
-            button1.UseVisualStyleBackColor = false;
+            productsButton.BackColor = Color.FromArgb(120, 0, 0);
+            productsButton.FlatStyle = FlatStyle.Flat;
+            productsButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            productsButton.ForeColor = Color.White;
+            productsButton.Location = new Point(230, 130);
+            productsButton.Name = "productsButton";
+            productsButton.Size = new Size(220, 45);
+            productsButton.TabIndex = 1;
+            productsButton.Text = "Товари";
+            productsButton.UseVisualStyleBackColor = false;
+            productsButton.Click += productsButton_Click;
             // 
-            // button2
+            // deliveryButton
             // 
-            button2.BackColor = Color.FromArgb(120, 0, 0);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(230, 190);
-            button2.Name = "button2";
-            button2.Size = new Size(220, 45);
-            button2.TabIndex = 2;
-            button2.Text = "Надходження";
-            button2.UseVisualStyleBackColor = false;
+            deliveryButton.BackColor = Color.FromArgb(120, 0, 0);
+            deliveryButton.FlatStyle = FlatStyle.Flat;
+            deliveryButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            deliveryButton.ForeColor = Color.White;
+            deliveryButton.Location = new Point(230, 190);
+            deliveryButton.Name = "deliveryButton";
+            deliveryButton.Size = new Size(220, 45);
+            deliveryButton.TabIndex = 2;
+            deliveryButton.Text = "Надходження";
+            deliveryButton.UseVisualStyleBackColor = false;
+            deliveryButton.Click += deliveryButton_Click;
             // 
-            // button3
+            // saleButton
             // 
-            button3.BackColor = Color.FromArgb(120, 0, 0);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(230, 250);
-            button3.Name = "button3";
-            button3.Size = new Size(220, 45);
-            button3.TabIndex = 3;
-            button3.Text = "Продаж";
-            button3.UseVisualStyleBackColor = false;
+            saleButton.BackColor = Color.FromArgb(120, 0, 0);
+            saleButton.FlatStyle = FlatStyle.Flat;
+            saleButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            saleButton.ForeColor = Color.White;
+            saleButton.Location = new Point(230, 250);
+            saleButton.Name = "saleButton";
+            saleButton.Size = new Size(220, 45);
+            saleButton.TabIndex = 3;
+            saleButton.Text = "Продаж";
+            saleButton.UseVisualStyleBackColor = false;
+            saleButton.Click += saleButton_Click;
             // 
-            // button4
+            // inventoryButton
             // 
-            button4.BackColor = Color.FromArgb(120, 0, 0);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(230, 310);
-            button4.Name = "button4";
-            button4.Size = new Size(220, 45);
-            button4.TabIndex = 4;
-            button4.Text = "Інвентаризація";
-            button4.UseVisualStyleBackColor = false;
+            inventoryButton.BackColor = Color.FromArgb(120, 0, 0);
+            inventoryButton.FlatStyle = FlatStyle.Flat;
+            inventoryButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            inventoryButton.ForeColor = Color.White;
+            inventoryButton.Location = new Point(230, 310);
+            inventoryButton.Name = "inventoryButton";
+            inventoryButton.Size = new Size(220, 45);
+            inventoryButton.TabIndex = 4;
+            inventoryButton.Text = "Інвентаризація";
+            inventoryButton.UseVisualStyleBackColor = false;
+            inventoryButton.Click += inventoryButton_Click;
             // 
             // MainForm
             // 
@@ -104,10 +108,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 240, 235);
             ClientSize = new Size(682, 453);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(inventoryButton);
+            Controls.Add(saleButton);
+            Controls.Add(deliveryButton);
+            Controls.Add(productsButton);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -121,9 +125,9 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button productsButton;
+        private Button deliveryButton;
+        private Button saleButton;
+        private Button inventoryButton;
     }
 }
