@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization; 
+using System.Threading;
 
 namespace Store.Forms
 {
