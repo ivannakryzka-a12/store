@@ -223,6 +223,7 @@
             writeOffButton.TabIndex = 14;
             writeOffButton.Text = "Списати";
             writeOffButton.UseVisualStyleBackColor = false;
+            writeOffButton.Click += writeOffButton_Click;
             // 
             // ProductsForm
             // 

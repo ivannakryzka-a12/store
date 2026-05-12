@@ -181,5 +181,36 @@ namespace Store.Forms
 
             UpdateGrid();
         }
+
+        private void writeOffButton_Click(object sender, EventArgs e)
+        {
+            if (productsGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Виберіть товар");
+                return;
+            }
+
+            Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            int quantity;
+
+            bool correct = int.TryParse(quantityTextBox.Text, out quantity);
+
+            if (!correct || quantity <= 0)
+            {
+                MessageBox.Show("Некоректна кількість");
+                return;
+            }
+
+            bool success = _storeManager.WriteOff(selectedProduct, quantity);
+
+            if (!success)
+            {
+                MessageBox.Show("Недостатньо товару");
+                return;
+            }
+
+            UpdateGrid();
+        }
     }
 }
