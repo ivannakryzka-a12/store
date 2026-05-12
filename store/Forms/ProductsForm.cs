@@ -17,7 +17,7 @@ namespace Store.Forms
         public ProductsForm()
         {
             InitializeComponent();
-            SetupGrid(); 
+            SetupGrid();
             UpdateGrid();
         }
         private void SetupGrid()
@@ -124,6 +124,39 @@ namespace Store.Forms
                 priceTextBox.Text = selectedProduct.Price.ToString();
                 quantityTextBox.Text = selectedProduct.Quantity.ToString();
             }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (productsGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Виберіть товар");
+                return;
+            }
+
+            Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            decimal price;
+            int quantity;
+
+            bool priceCorrect =
+                decimal.TryParse(priceTextBox.Text, out price);
+
+            bool quantityCorrect =
+                int.TryParse(quantityTextBox.Text, out quantity);
+
+            if (!priceCorrect || !quantityCorrect)
+            {
+                MessageBox.Show("Некоректні дані");
+                return;
+            }
+
+            selectedProduct.Name = nameTextBox.Text;
+            selectedProduct.Unit = unitTextBox.Text;
+            selectedProduct.Price = price;
+            selectedProduct.Quantity = quantity;
+
+            UpdateGrid();
         }
     }
 }
