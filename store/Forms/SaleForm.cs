@@ -14,5 +14,10 @@ namespace Store.Forms
         {
             InitializeComponent();
         }
+
+        private void finishSaleButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
