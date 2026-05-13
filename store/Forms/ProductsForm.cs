@@ -15,18 +15,18 @@ namespace Store.Forms
     /// </summary>
     public partial class ProductsForm : Form
     {
-        private StoreManager _storeManager = new();
+        private StoreManager _storeManager;
         private const string FilePath = "products.json";
         private BindingSource _bindingSource = new BindingSource();
 
         /// <summary>
         /// Конструктор форми: завантажує дані та налаштовує таблицю
         /// </summary>
-        public ProductsForm()
+        public ProductsForm(StoreManager storeManager)
         {
             InitializeComponent();
 
-            _storeManager.Products = DataStorage.Load(FilePath);
+            _storeManager = storeManager;
 
             SetupGrid();
             UpdateGrid();
