@@ -15,7 +15,7 @@ namespace Store.Forms
     /// </summary>
     public partial class InventoryForm : Form
     {
-        private StoreManager _storeManager = new();
+        private StoreManager _storeManager;
 
         private const string FilePath = "products.json";
 
@@ -24,17 +24,17 @@ namespace Store.Forms
         /// <summary>
         /// Ініціалізує компоненти та запускає завантаження даних.
         /// </summary>
-        public InventoryForm()
+        public InventoryForm(StoreManager storeManager)
         {
             InitializeComponent();
+
+            _storeManager = storeManager;
 
             LoadData();
         }
 
         private void LoadData()
         {
-            _storeManager.Products = DataStorage.Load(FilePath);
-
             inventoryGrid.DataSource = null;
 
             inventoryGrid.DataSource = _storeManager.Products;

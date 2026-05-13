@@ -16,7 +16,7 @@ namespace Store.Forms
     /// </summary>
     public partial class SaleForm : Form
     {
-        private StoreManager _storeManager = new();
+        private StoreManager _storeManager;
 
         private CheckManager _checkManager;
 
@@ -29,11 +29,11 @@ namespace Store.Forms
         /// <summary>
         /// Конструктор форми: ініціалізує менеджери, завантажує товари та налаштовує таблицю.
         /// </summary>
-        public SaleForm()
+        public SaleForm(StoreManager storeManager)
         {
             InitializeComponent();
 
-            _storeManager.Products = DataStorage.Load(FilePath);
+            _storeManager = storeManager;
 
             _checkManager = new CheckManager(_storeManager);
 
