@@ -32,7 +32,6 @@
             inventoryGrid = new DataGridView();
             label2 = new Label();
             totalLabel = new Label();
-            refreshButton = new Button();
             saveReportButton = new Button();
             ((System.ComponentModel.ISupportInitialize)inventoryGrid).BeginInit();
             SuspendLayout();
@@ -55,6 +54,7 @@
             inventoryGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             inventoryGrid.Location = new Point(40, 70);
             inventoryGrid.Name = "inventoryGrid";
+            inventoryGrid.ReadOnly = true;
             inventoryGrid.RowHeadersWidth = 51;
             inventoryGrid.Size = new Size(760, 280);
             inventoryGrid.TabIndex = 1;
@@ -80,20 +80,6 @@
             totalLabel.TabIndex = 3;
             totalLabel.Text = "0 грн";
             // 
-            // refreshButton
-            // 
-            refreshButton.BackColor = Color.FromArgb(120, 0, 0);
-            refreshButton.FlatStyle = FlatStyle.Flat;
-            refreshButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(450, 410);
-            refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(154, 42);
-            refreshButton.TabIndex = 4;
-            refreshButton.Text = "Оновити дані";
-            refreshButton.UseVisualStyleBackColor = false;
-            refreshButton.Click += refreshButton_Click;
-            // 
             // saveReportButton
             // 
             saveReportButton.BackColor = Color.FromArgb(120, 0, 0);
@@ -115,7 +101,6 @@
             BackColor = Color.FromArgb(248, 240, 235);
             ClientSize = new Size(832, 503);
             Controls.Add(saveReportButton);
-            Controls.Add(refreshButton);
             Controls.Add(totalLabel);
             Controls.Add(label2);
             Controls.Add(inventoryGrid);
@@ -136,7 +121,6 @@
         private DataGridView inventoryGrid;
         private Label label2;
         private Label totalLabel;
-        private Button refreshButton;
         private Button saveReportButton;
     }
 }

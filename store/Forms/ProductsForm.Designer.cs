@@ -67,6 +67,7 @@
             productsGrid.Location = new Point(30, 70);
             productsGrid.MultiSelect = false;
             productsGrid.Name = "productsGrid";
+            productsGrid.ReadOnly = true;
             productsGrid.RowHeadersWidth = 51;
             productsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productsGrid.Size = new Size(820, 220);

@@ -64,13 +64,6 @@ namespace Store.Forms
                 inventoryGrid.Columns["LastDeliveryDate"].HeaderText = "Дата завезення";
         }
 
-        private void refreshButton_Click(object sender, EventArgs e)
-        {
-            LoadData();
-
-            MessageBox.Show("Дані оновлено!");
-        }
-
         private void saveReportButton_Click(object sender, EventArgs e)
         {
             string report = "ЗВІТ ПРО ІНВЕНТАРИЗАЦІЮ\n\n";

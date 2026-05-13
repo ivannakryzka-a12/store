@@ -59,6 +59,7 @@
             productsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsGrid.Location = new Point(30, 80);
             productsGrid.Name = "productsGrid";
+            productsGrid.ReadOnly = true;
             productsGrid.RowHeadersVisible = false;
             productsGrid.RowHeadersWidth = 51;
             productsGrid.Size = new Size(519, 250);
