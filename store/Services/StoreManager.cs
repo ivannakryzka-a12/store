@@ -39,6 +39,8 @@ namespace Store.Services
             {
                 existing.Quantity += newProduct.Quantity;
                 existing.LastDeliveryDate = DateTime.Now;
+                existing.Price = newProduct.Price;
+                existing.Unit = newProduct.Unit;
             }
             else
             {

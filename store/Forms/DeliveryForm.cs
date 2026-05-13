@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Store.Models;
@@ -56,6 +53,12 @@ namespace Store.Forms
             if (!quantityCorrect || quantity <= 0)
             {
                 MessageBox.Show("Некоректна кількість");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
+            {
+                MessageBox.Show("Введіть назву товару");
                 return;
             }
 

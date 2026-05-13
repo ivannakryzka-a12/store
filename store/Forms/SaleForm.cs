@@ -1,9 +1,6 @@
 ﻿using Store.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Store.Models;
@@ -101,6 +98,8 @@ namespace Store.Forms
             checkListBox.Items.Clear();
 
             label4.Text = "Сума: 0 грн";
+
+            quantityTextBox.Clear();
 
             UpdateGrid();
         }

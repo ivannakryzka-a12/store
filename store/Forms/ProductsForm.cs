@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
@@ -76,15 +74,21 @@ namespace Store.Forms
                 return;
             }
 
+            if (!priceCorrect || !quantityCorrect)
+            {
+                MessageBox.Show("Некоректні дані");
+                return;
+            }
+
             if (price <= 0 || quantity < 0)
             {
                 MessageBox.Show("Ціна і кількість мають бути більше 0");
                 return;
             }
 
-            if (!priceCorrect || !quantityCorrect)
+            if (_storeManager.GetByName(nameTextBox.Text) != null)
             {
-                MessageBox.Show("Некоректні дані");
+                MessageBox.Show("Такий товар вже існує");
                 return;
             }
 
