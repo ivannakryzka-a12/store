@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using Store.Models;
 using Store.Services;
 
@@ -256,6 +257,30 @@ namespace Store.Forms
             }
 
             DataStorage.Save(_storeManager.Products, FilePath);
+
+            UpdateGrid();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchText = searchTextBox.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                UpdateGrid();
+                return;
+            }
+
+            List<Product> filteredProducts = _storeManager.Products
+                .Where(p => p.Name.ToLower().Contains(searchText))
+                .ToList();
+
+            _bindingSource.DataSource = filteredProducts;
+        }
+
+        private void showAllButton_Click(object sender, EventArgs e)
+        {
+            searchTextBox.Clear();
 
             UpdateGrid();
         }

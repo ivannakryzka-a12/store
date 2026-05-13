@@ -43,6 +43,9 @@
             deleteButton = new Button();
             discountButton = new Button();
             writeOffButton = new Button();
+            searchTextBox = new TextBox();
+            searchButton = new Button();
+            showAllButton = new Button();
             ((System.ComponentModel.ISupportInitialize)productsGrid).BeginInit();
             SuspendLayout();
             // 
@@ -224,12 +227,53 @@
             writeOffButton.UseVisualStyleBackColor = false;
             writeOffButton.Click += writeOffButton_Click;
             // 
+            // searchTextBox
+            // 
+            searchTextBox.BackColor = Color.White;
+            searchTextBox.BorderStyle = BorderStyle.FixedSingle;
+            searchTextBox.Font = new Font("Segoe UI", 10F);
+            searchTextBox.Location = new Point(579, 25);
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.Size = new Size(200, 30);
+            searchTextBox.TabIndex = 15;
+            // 
+            // searchButton
+            // 
+            searchButton.BackColor = Color.FromArgb(120, 0, 0);
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(785, 22);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(84, 35);
+            searchButton.TabIndex = 16;
+            searchButton.Text = "Пошук";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
+            // 
+            // showAllButton
+            // 
+            showAllButton.BackColor = Color.FromArgb(120, 0, 0);
+            showAllButton.FlatStyle = FlatStyle.Flat;
+            showAllButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            showAllButton.ForeColor = Color.White;
+            showAllButton.Location = new Point(30, 20);
+            showAllButton.Name = "showAllButton";
+            showAllButton.Size = new Size(140, 35);
+            showAllButton.TabIndex = 17;
+            showAllButton.Text = "Показати всі";
+            showAllButton.UseVisualStyleBackColor = false;
+            showAllButton.Click += showAllButton_Click;
+            // 
             // ProductsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 240, 235);
             ClientSize = new Size(882, 553);
+            Controls.Add(searchButton);
+            Controls.Add(searchTextBox);
+            Controls.Add(showAllButton);
             Controls.Add(writeOffButton);
             Controls.Add(discountButton);
             Controls.Add(deleteButton);
@@ -272,5 +316,8 @@
         private Button deleteButton;
         private Button discountButton;
         private Button writeOffButton;
+        private TextBox searchTextBox;
+        private Button searchButton;
+        private Button showAllButton;
     }
 }
