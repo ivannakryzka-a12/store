@@ -63,14 +63,6 @@ namespace Store.Services
         {
             return check.TotalAmount();
         }
-
-        /// <summary>
-        /// Завершує оформлення чека (резерв для розширення функціоналу).
-        /// </summary>
-        public void FinishCheck(Check check)
-        {
-            // додати логіку друку чека або збереження історії покупок
-        }
     }
 }
 

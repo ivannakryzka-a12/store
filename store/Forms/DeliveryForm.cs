@@ -5,8 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Globalization; 
-using System.Threading;
 using Store.Models;
 using Store.Services;
 
@@ -53,8 +51,7 @@ namespace Store.Forms
         {
             int quantity;
 
-            bool quantityCorrect =
-                int.TryParse(quantityTextBox.Text, out quantity);
+            bool quantityCorrect = int.TryParse(quantityTextBox.Text, out quantity);
 
             if (!quantityCorrect || quantity <= 0)
             {
@@ -63,6 +60,18 @@ namespace Store.Forms
             }
 
             string productName = productNameTextBox.Text;
+
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                MessageBox.Show("Введіть назву товару");
+                return;
+            }
+
+            if (deliveryDatePicker.Value.Date > DateTime.Now.Date)
+            {
+                MessageBox.Show("Дата поставки не може бути майбутньою");
+                return;
+            }
 
             Product product = _storeManager.GetByName(productName);
 

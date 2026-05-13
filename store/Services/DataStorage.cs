@@ -23,9 +23,9 @@ namespace Store.Services
                 string json = JsonSerializer.Serialize(products, options);
                 File.WriteAllText(path, json);
             }
-            catch
+            catch (Exception ex)
             {
-                
+                MessageBox.Show($"Помилка збереження: {ex.Message}");
             }
         }
 
@@ -46,8 +46,9 @@ namespace Store.Services
 
                 return data ?? new List<Product>();
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show($"Помилка завантаження: {ex.Message}");
                 return new List<Product>();
             }
         }

@@ -113,6 +113,12 @@ namespace Store.Forms
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(quantityTextBox.Text))
+            {
+                MessageBox.Show("Введіть кількість");
+                return;
+            }
+
             int quantity;
 
             bool correct = int.TryParse(quantityTextBox.Text, out quantity);
@@ -124,6 +130,12 @@ namespace Store.Forms
             }
 
             Product selectedProduct = (Product)productsGrid.CurrentRow.DataBoundItem;
+
+            if (selectedProduct.Quantity == 0)
+            {
+                MessageBox.Show("Товар відсутній на складі");
+                return;
+            }
 
             bool success = _checkManager.AddProductToCheck(_currentCheck, selectedProduct.Name, quantity);
 

@@ -63,6 +63,24 @@ namespace Store.Forms
             bool priceCorrect = decimal.TryParse(priceTextBox.Text, out price);
             bool quantityCorrect = int.TryParse(quantityTextBox.Text, out quantity);
 
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                MessageBox.Show("Введіть назву товару");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(unitTextBox.Text))
+            {
+                MessageBox.Show("Введіть одиницю виміру");
+                return;
+            }
+
+            if (price <= 0 || quantity < 0)
+            {
+                MessageBox.Show("Ціна і кількість мають бути більше 0");
+                return;
+            }
+
             if (!priceCorrect || !quantityCorrect)
             {
                 MessageBox.Show("Некоректні дані");
@@ -147,6 +165,24 @@ namespace Store.Forms
             bool priceCorrect = decimal.TryParse(priceTextBox.Text, out price);
 
             bool quantityCorrect = int.TryParse(quantityTextBox.Text, out quantity);
+
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                MessageBox.Show("Введіть назву товару");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(unitTextBox.Text))
+            {
+                MessageBox.Show("Введіть одиницю виміру");
+                return;
+            }
+
+            if (price <= 0 || quantity < 0)
+            {
+                MessageBox.Show("Ціна і кількість мають бути більше 0");
+                return;
+            }
 
             if (!priceCorrect || !quantityCorrect)
             {
