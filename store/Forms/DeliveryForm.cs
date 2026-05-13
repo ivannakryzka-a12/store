@@ -8,7 +8,7 @@ using Store.Services;
 namespace Store.Forms
 {
     /// <summary>
-    /// лас для управління надходженням товарів на склад.
+    /// Клас для управління надходженням товарів на склад.
     /// </summary>
     public partial class DeliveryForm : Form
     {
@@ -25,25 +25,6 @@ namespace Store.Forms
             _storeManager = storeManager;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quantityTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
         private void addDeliveryButton_Click(object sender, EventArgs e)
         {
             int quantity;

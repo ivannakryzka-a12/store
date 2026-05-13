@@ -46,7 +46,6 @@
             resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.FromArgb(70, 40, 40);
             label1.Name = "label1";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -77,14 +76,12 @@
             resources.ApplyResources(quantityTextBox, "quantityTextBox");
             quantityTextBox.BorderStyle = BorderStyle.FixedSingle;
             quantityTextBox.Name = "quantityTextBox";
-            quantityTextBox.TextChanged += quantityTextBox_TextChanged;
             // 
             // deliveryDatePicker
             // 
             resources.ApplyResources(deliveryDatePicker, "deliveryDatePicker");
             deliveryDatePicker.Format = DateTimePickerFormat.Custom;
             deliveryDatePicker.Name = "deliveryDatePicker";
-            deliveryDatePicker.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // addDeliveryButton
             // 
@@ -106,7 +103,6 @@
             resources.ApplyResources(lastDeliveryLabel, "lastDeliveryLabel");
             lastDeliveryLabel.ForeColor = Color.FromArgb(70, 40, 40);
             lastDeliveryLabel.Name = "lastDeliveryLabel";
-            lastDeliveryLabel.Click += label6_Click;
             // 
             // DeliveryForm
             // 
