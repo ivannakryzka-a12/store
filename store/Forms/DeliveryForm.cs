@@ -17,17 +17,17 @@ namespace Store.Forms
     /// </summary>
     public partial class DeliveryForm : Form
     {
-        private StoreManager _storeManager = new();
+        private StoreManager _storeManager;
         private const string FilePath = "products.json";
 
         /// <summary>
         /// Конструктор форми: налаштовує компоненти та завантажує дані з файлу.
         /// </summary>
-        public DeliveryForm()
+        public DeliveryForm(StoreManager storeManager)
         {
             InitializeComponent();
 
-            _storeManager.Products = DataStorage.Load(FilePath);
+            _storeManager = storeManager;
         }
 
         private void label1_Click(object sender, EventArgs e)
