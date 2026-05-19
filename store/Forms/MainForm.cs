@@ -17,8 +17,22 @@ namespace Store.Forms
         public MainForm()
         {
             InitializeComponent();
-
             _storeManager.Products = DataStorage.Load(FilePath);
+
+            this.KeyPreview = true;
+            this.KeyDown += MainForm_KeyDown;
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Гарячі клавіші системи:\n\n• F1 — Виклик довідки\n• Enter — Підтвердження дії (Згода)\n• Esc — Закриття вікна / Вихід (Відмова)\n• Tab / Shift-Tab — Навігація між полями та кнопками", "Довідка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); 
+            }
         }
 
         private void productsButton_Click(object sender, EventArgs e)

@@ -57,7 +57,7 @@
             inventoryGrid.ReadOnly = true;
             inventoryGrid.RowHeadersWidth = 51;
             inventoryGrid.Size = new Size(760, 280);
-            inventoryGrid.TabIndex = 1;
+            inventoryGrid.TabIndex = 0;
             // 
             // label2
             // 
@@ -89,7 +89,7 @@
             saveReportButton.Location = new Point(620, 410);
             saveReportButton.Name = "saveReportButton";
             saveReportButton.Size = new Size(133, 42);
-            saveReportButton.TabIndex = 5;
+            saveReportButton.TabIndex = 1;
             saveReportButton.Text = "Зберегти звіт";
             saveReportButton.UseVisualStyleBackColor = false;
             saveReportButton.Click += saveReportButton_Click;

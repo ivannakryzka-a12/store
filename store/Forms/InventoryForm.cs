@@ -29,6 +29,22 @@ namespace Store.Forms
             _storeManager = storeManager;
 
             LoadData();
+
+            this.KeyPreview = true;
+            this.AcceptButton = saveReportButton; 
+            this.KeyDown += InventoryForm_KeyDown;
+        }
+
+        private void InventoryForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Інвентаризація залишків:\n\n• Enter — Експортувати та зберегти звіт у текстовий файл\n• Esc — Закрити вікно звіту", "Довідка: Звіти", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); 
+            }
         }
 
         private void LoadData()

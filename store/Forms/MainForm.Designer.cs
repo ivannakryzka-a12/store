@@ -55,7 +55,7 @@
             productsButton.Location = new Point(230, 130);
             productsButton.Name = "productsButton";
             productsButton.Size = new Size(220, 45);
-            productsButton.TabIndex = 1;
+            productsButton.TabIndex = 0;
             productsButton.Text = "Товари";
             productsButton.UseVisualStyleBackColor = false;
             productsButton.Click += productsButton_Click;
@@ -69,7 +69,7 @@
             deliveryButton.Location = new Point(230, 190);
             deliveryButton.Name = "deliveryButton";
             deliveryButton.Size = new Size(220, 45);
-            deliveryButton.TabIndex = 2;
+            deliveryButton.TabIndex = 1;
             deliveryButton.Text = "Надходження";
             deliveryButton.UseVisualStyleBackColor = false;
             deliveryButton.Click += deliveryButton_Click;
@@ -83,7 +83,7 @@
             saleButton.Location = new Point(230, 250);
             saleButton.Name = "saleButton";
             saleButton.Size = new Size(220, 45);
-            saleButton.TabIndex = 3;
+            saleButton.TabIndex = 2;
             saleButton.Text = "Продаж";
             saleButton.UseVisualStyleBackColor = false;
             saleButton.Click += saleButton_Click;
@@ -97,7 +97,7 @@
             inventoryButton.Location = new Point(230, 310);
             inventoryButton.Name = "inventoryButton";
             inventoryButton.Size = new Size(220, 45);
-            inventoryButton.TabIndex = 4;
+            inventoryButton.TabIndex = 3;
             inventoryButton.Text = "Інвентаризація";
             inventoryButton.UseVisualStyleBackColor = false;
             inventoryButton.Click += inventoryButton_Click;

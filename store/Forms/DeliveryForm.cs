@@ -23,6 +23,22 @@ namespace Store.Forms
             InitializeComponent();
 
             _storeManager = storeManager;
+
+            this.KeyPreview = true;
+            this.AcceptButton = addDeliveryButton; 
+            this.KeyDown += DeliveryForm_KeyDown;
+        }
+
+        private void DeliveryForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Постачання товарів:\n\n• Enter — Оформити надходження товару на склад\n• Esc — Скасувати та вийти в меню", "Довідка: Поставки", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); 
+            }
         }
 
         private void addDeliveryButton_Click(object sender, EventArgs e)

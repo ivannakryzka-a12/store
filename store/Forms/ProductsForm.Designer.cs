@@ -74,7 +74,8 @@
             productsGrid.RowHeadersWidth = 51;
             productsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productsGrid.Size = new Size(820, 220);
-            productsGrid.TabIndex = 1;
+            productsGrid.TabIndex = 3;
+            productsGrid.TabStop = false;
             // 
             // label2
             // 
@@ -134,7 +135,7 @@
             unitTextBox.Location = new Point(168, 376);
             unitTextBox.Name = "unitTextBox";
             unitTextBox.Size = new Size(180, 30);
-            unitTextBox.TabIndex = 7;
+            unitTextBox.TabIndex = 4;
             // 
             // priceTextBox
             // 
@@ -144,7 +145,7 @@
             priceTextBox.Location = new Point(548, 326);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(180, 30);
-            priceTextBox.TabIndex = 8;
+            priceTextBox.TabIndex = 5;
             // 
             // quantityTextBox
             // 
@@ -154,7 +155,7 @@
             quantityTextBox.Location = new Point(548, 376);
             quantityTextBox.Name = "quantityTextBox";
             quantityTextBox.Size = new Size(180, 30);
-            quantityTextBox.TabIndex = 9;
+            quantityTextBox.TabIndex = 6;
             // 
             // addButton
             // 
@@ -165,7 +166,7 @@
             addButton.Location = new Point(158, 444);
             addButton.Name = "addButton";
             addButton.Size = new Size(140, 40);
-            addButton.TabIndex = 10;
+            addButton.TabIndex = 7;
             addButton.Text = "Додати";
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
@@ -179,7 +180,7 @@
             updateButton.Location = new Point(330, 444);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(140, 40);
-            updateButton.TabIndex = 11;
+            updateButton.TabIndex = 8;
             updateButton.Text = "Оновити";
             updateButton.UseVisualStyleBackColor = false;
             updateButton.Click += updateButton_Click;
@@ -193,7 +194,7 @@
             deleteButton.Location = new Point(510, 444);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(140, 40);
-            deleteButton.TabIndex = 12;
+            deleteButton.TabIndex = 9;
             deleteButton.Text = "Видалити";
             deleteButton.UseVisualStyleBackColor = false;
             deleteButton.Click += deleteButton_Click;
@@ -208,7 +209,7 @@
             discountButton.Name = "discountButton";
             discountButton.RightToLeft = RightToLeft.No;
             discountButton.Size = new Size(140, 40);
-            discountButton.TabIndex = 13;
+            discountButton.TabIndex = 10;
             discountButton.Text = "Уцінка";
             discountButton.UseVisualStyleBackColor = false;
             discountButton.Click += discountButton_Click;
@@ -222,7 +223,7 @@
             writeOffButton.Location = new Point(433, 501);
             writeOffButton.Name = "writeOffButton";
             writeOffButton.Size = new Size(140, 40);
-            writeOffButton.TabIndex = 14;
+            writeOffButton.TabIndex = 11;
             writeOffButton.Text = "Списати";
             writeOffButton.UseVisualStyleBackColor = false;
             writeOffButton.Click += writeOffButton_Click;
@@ -235,7 +236,7 @@
             searchTextBox.Location = new Point(579, 25);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(200, 30);
-            searchTextBox.TabIndex = 15;
+            searchTextBox.TabIndex = 1;
             // 
             // searchButton
             // 
@@ -246,7 +247,7 @@
             searchButton.Location = new Point(785, 22);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(84, 35);
-            searchButton.TabIndex = 16;
+            searchButton.TabIndex = 2;
             searchButton.Text = "Пошук";
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click;
@@ -260,7 +261,7 @@
             showAllButton.Location = new Point(30, 20);
             showAllButton.Name = "showAllButton";
             showAllButton.Size = new Size(140, 35);
-            showAllButton.TabIndex = 17;
+            showAllButton.TabIndex = 0;
             showAllButton.Text = "Показати всі";
             showAllButton.UseVisualStyleBackColor = false;
             showAllButton.Click += showAllButton_Click;

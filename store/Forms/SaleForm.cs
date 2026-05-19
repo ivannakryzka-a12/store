@@ -39,6 +39,22 @@ namespace Store.Forms
             SetupGrid();
 
             UpdateGrid();
+
+            this.KeyPreview = true;
+            this.AcceptButton = addToCheckButton; 
+            this.KeyDown += SaleForm_KeyDown;
+        }
+
+        private void SaleForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Продаж товарів:\n\n• Enter — Додати обраний товар у поточний чек\n• Esc — Закрити вікно продажів", "Довідка: Каса", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); 
+            }
         }
 
         private void SetupGrid()

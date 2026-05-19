@@ -29,7 +29,24 @@ namespace Store.Forms
 
             SetupGrid();
             UpdateGrid();
+
+            this.KeyPreview = true;
+            this.AcceptButton = addButton; 
+            this.KeyDown += ProductsForm_KeyDown;
         }
+
+        private void ProductsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                MessageBox.Show("Управління товарами:\n\n• Enter — Додати новий товар за заповненими полями\n• Esc — Повернутися в головне меню", "Довідка: Склад", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); // Esc = Відмова
+            }
+        }
+
         private void SetupGrid()
         {
             productsGrid.DataSource = _bindingSource;

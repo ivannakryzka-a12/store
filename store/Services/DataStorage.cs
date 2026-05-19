@@ -1,5 +1,7 @@
-﻿using System.Text.Json;
-using Store.Models;
+﻿using Store.Models;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 
 namespace Store.Services
 {
@@ -17,7 +19,8 @@ namespace Store.Services
             {
                 var options = new JsonSerializerOptions
                 {
-                    WriteIndented = true
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic)
                 };
 
                 string json = JsonSerializer.Serialize(products, options);

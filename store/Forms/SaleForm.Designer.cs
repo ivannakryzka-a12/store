@@ -64,6 +64,7 @@
             productsGrid.RowHeadersWidth = 51;
             productsGrid.Size = new Size(519, 250);
             productsGrid.TabIndex = 1;
+            productsGrid.TabStop = false;
             // 
             // label2
             // 
@@ -72,7 +73,7 @@
             label2.Location = new Point(691, 49);
             label2.Name = "label2";
             label2.Size = new Size(49, 28);
-            label2.TabIndex = 2;
+            label2.TabIndex = 1;
             label2.Text = "Чек";
             // 
             // checkListBox
@@ -82,6 +83,7 @@
             checkListBox.Name = "checkListBox";
             checkListBox.Size = new Size(300, 244);
             checkListBox.TabIndex = 3;
+            checkListBox.TabStop = false;
             // 
             // label3
             // 
@@ -99,7 +101,7 @@
             quantityTextBox.Location = new Point(150, 355);
             quantityTextBox.Name = "quantityTextBox";
             quantityTextBox.Size = new Size(125, 27);
-            quantityTextBox.TabIndex = 5;
+            quantityTextBox.TabIndex = 2;
             // 
             // addToCheckButton
             // 
@@ -110,7 +112,7 @@
             addToCheckButton.Location = new Point(120, 420);
             addToCheckButton.Name = "addToCheckButton";
             addToCheckButton.Size = new Size(180, 40);
-            addToCheckButton.TabIndex = 6;
+            addToCheckButton.TabIndex = 4;
             addToCheckButton.Text = "Додати в чек";
             addToCheckButton.UseVisualStyleBackColor = false;
             addToCheckButton.Click += addToCheckButton_Click;
@@ -122,7 +124,7 @@
             label4.Location = new Point(550, 360);
             label4.Name = "label4";
             label4.Size = new Size(123, 28);
-            label4.TabIndex = 7;
+            label4.TabIndex = 3;
             label4.Text = "Сума: 0 грн";
             // 
             // finishSaleButton
@@ -134,7 +136,7 @@
             finishSaleButton.Location = new Point(520, 420);
             finishSaleButton.Name = "finishSaleButton";
             finishSaleButton.Size = new Size(220, 45);
-            finishSaleButton.TabIndex = 8;
+            finishSaleButton.TabIndex = 5;
             finishSaleButton.Text = "Завершити покупку";
             finishSaleButton.UseVisualStyleBackColor = false;
             finishSaleButton.Click += finishSaleButton_Click;

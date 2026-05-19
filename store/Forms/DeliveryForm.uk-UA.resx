@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="productNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="quantityTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="deliveryDatePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addDeliveryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="lastDeliveryLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -125,14 +137,8 @@
   <data name="lastDeliveryLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10pt, style=Bold</value>
   </data>
-  <data name="lastDeliveryLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 362</value>
-  </data>
   <data name="lastDeliveryLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 23</value>
-  </data>
-  <data name="lastDeliveryLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="lastDeliveryLabel.Text" xml:space="preserve">
     <value>Немає даних</value>
